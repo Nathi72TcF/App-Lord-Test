@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary" class="aligned">
+      Films
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+      <ion-card-title color="primary" class="align">Start Wars Movies</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="ion-padding" align="center" class="img">
+        <img src="./../../../assets/images/Starwars.jpeg">
+      </div><br>
+
+      <ion-card-subtitle color="primary" class="align" *ngFor="let film of Films">No. {{ film.count }}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+
+    <div *ngFor="let film of Films">
+      <ion-card color="primary" *ngFor="let num of film.results">
+        <div tappable (click)="seefilm(num.url)">
+          {{ num.title }}
+        </div>
+      </ion-card>
+    </div>
+
+</ion-content>

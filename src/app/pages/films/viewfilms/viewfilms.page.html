@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary">
+     Movie Details
+    </ion-title>
+
+    <ion-buttons slot="end" (click)="dismiss()">
+      <ion-icon color="primary" name="close"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let film of viewMovie">
+  <ion-card-header>
+    <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle>  starships vehicles species -->
+    <ion-card-title color="primary">{{ film.title }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>created: {{ film.created }}</p>
+    <p>director: {{ film.director }}</p>
+    <p>producer: {{ film.producer }}</p>
+
+    <p>Planets</p>
+    <div *ngFor="let film of viewMovie">
+      <ion-card color="primary" *ngFor="let num of film.planets">
+          {{ num }}
+      </ion-card>
+
+      <p>Star Ships</p>
+      <ion-card color="primary" *ngFor="let num of film.starships">
+        {{ num }}
+      </ion-card>
+
+      <p>Vehicles</p>
+      <ion-card color="primary" *ngFor="let num of film.vehicles">
+        {{ num }}
+      </ion-card>
+
+      <p>Species</p>
+      <ion-card color="primary" *ngFor="let num of film.species">
+        {{ num }}
+      </ion-card>
+    </div>
+  </ion-card-content>
+  </ion-card>
+</ion-content>

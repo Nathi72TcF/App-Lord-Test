@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="primary" class="aligned">
+      Vehicles
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+      <ion-card-title color="primary" class="align">Start Wars Movies</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="ion-padding" align="center" class="img">
+        <img src="./../../../assets/images/Starwars.jpeg">
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngFor="let car of vehicles">
+    <ion-card color="primary" *ngFor="let num of car.results">
+      {{ num.name }}
+    </ion-card>
+  </div>
+</ion-content>
